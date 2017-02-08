@@ -1,0 +1,2 @@
+# reddit-dailyprogrammer
+This repo will contain my attempt to complete as many daily programming challenges from reddit.com/r/dailyprogrammer. I will attempt each challenge in chronological order, and ignore challenges of the 'easy' difficulty. Also, I'm bound to end up skipping some if they take too long, seem trivial, or simply if I feel like it. I'm a bit new to using GitHub, so if there's anything I'm totally doing wrong feel free to let me know. I'll also try to add in some form of commentary as I go along.
