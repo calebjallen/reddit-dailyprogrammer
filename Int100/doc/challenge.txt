@@ -1,0 +1,36 @@
+**The Challenge**
+
+Given by: /u/Steve132
+
+https://www.reddit.com/r/dailyprogrammer/comments/106gse/9202012_challenge_100_intermediate_bad_word_filter/
+
+Paste of source for preservation (in case reddit dies):
+
+Write a program called 'censor' that takes in one argument on the command line.  This argument is the filename of a newline-separated wordlist of profanity such as
+
+http://urbanoalvarez.es/blog/2008/04/04/bad-words-list/ or
+
+http://www.bannedwordlist.com/SwearWordResources.htm
+
+The program should then read a text from standard in, and print it out again, but replacing every instance of a word in the wordlist with a 'censored' version.
+The censored version of a word has the same first character as the word, and the rest of the characters are replaced with '*'.  
+
+For example, the 'censored' version of 'peter' would be 'p****'
+
+Example: 
+
+    >echo 'You jerkface!' | censor badwords.txt
+    You j***face!
+
+**Initial Thoughts/Rambling**
+    - Well, the links are dead for the word lists. This is a great start. Maybe some requirements need to change.
+    - Found a list of swear words from some random site. They're not really swears though... since when was alcoholic ever a swear word? (found from http://www.hyperhero.com/en/insults.htm , the full list I use will be in /assets though)
+    - Some of these swears are ridiculous, 'Rufian'?! Whatever. It's a list of words and phrases I can use.
+    - I wonder if employers will look at this in the future. That'd be hilarious.
+
+**The Plan**
+    - Language of Choice: Python 3, I feel like the easy regex usage might help us out a bit (I haven't used python in months though, so let's see how this goes...)
+    - Probably going to start by putting all the swears into a list, then have regex find each instance of every word in the file and replace it with a concatenation of the first letter of the swear and the appropriate amount of asterisks.
+    - Problem with that: if a word (eg: jerk) is a subset of another word (eg: jerkface), it'll censor jerk if jerkface is found, but not the 'face' part, since the word will not be 'j***face'.
+    - Solution: read the list backwards, since our swears.txt is alphebatized. (this kind of a fix is probably a bad idea, but I'm rolling with it.)
+
